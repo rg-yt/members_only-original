@@ -4,17 +4,17 @@
 1. Think about and spec out how to set up your data models for this application. You’ll need users with the usual identification attributes like name, email and password. They’ll need to create posts as well.
   ```
   Users:
-  id:
+  id: integer
   username: string
   password: string
-  has_many: Posts
+  has_many Posts
 
   Posts:
-  id:
+  id: integer
   title: string
   body: text
-  belongs_to: User
-    user_id
+  belongs_to User
+    user_id: integer, foreign_key: true
   
   ```
 2. Create your new `members-only` Rails app and GitHub repo. Update your README.
