@@ -1,2 +1,14 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<% @posts.each do |post| %>
+  <div>
+    <h4>
+      <%= post.title %>
+      <% if user_signed_in? %>
+        <%= "-" + post.user.email %>
+      <% else %>
+        <%= "-Anonymous" %>
+      <% end %>
+    </h4>
+    <p><%= post.body.capitalize %></p>
+  </div>
+<% end %>
+  
